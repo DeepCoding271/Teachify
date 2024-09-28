@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher's Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f7f9fc; /* Light background color */
+      color: #333; /* Default text color */
+    }
+
+    /* Smooth transitions for interactive elements */
+    * {
+      transition: all 0.3s ease;
+    }
+
+    /* Top Navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #004b87; /* Main navigation color */
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    }
+
+    .navbar .class-dropdown select {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background-color: #fff; /* White background for dropdown */
+      color: #333;
+    }
+
+    .navbar .profile {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background-color: #003d66; /* Sidebar background */
+      color: white;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      padding: 2rem 1rem;
+      transition: width 0.3s ease;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 1.5rem 0;
+      opacity: 0.9;
+      display: flex;
+      align-items: center; /* Center align icons with text */
+    }
+
+    .sidebar ul li:hover {
+      transform: translateX(10px);
+      opacity: 1;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+      position: relative;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar ul li a i {
+      margin-right: 0.5rem; /* Space between icon and text */
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 240px;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    /* Widget Styles */
+    .widget {
+      background-color: #ffffff; /* White widget background */
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .widget:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .widget h3 {
+      margin-top: 0;
+      color: #004b87; /* Widget heading color */
+      display: flex;
+      align-items: center;
+    }
+
+    .widget h3 i {
+      margin-right: 0.5rem; /* Space between icon and title */
+    }
+
+    .widget p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .widget::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 75, 135, 0.1); /* Light overlay for widgets */
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .widget:hover::after {
+      opacity: 1;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: #888;
+      padding: 1rem 0;
+      background-color: #004b87; /* Footer color */
+      color: white;
+      position: relative;
+      bottom: -90px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <div class="logo">Classroom Tool</div>
+    <div class="profile">
+      <img src="https://via.placeholder.com/40" alt="Profile Picture">
+      <a href="" style="text-decoration:none; color:black">John Doe</a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+      <li><a href="studentatt.html"><i class="fas fa-user-check"></i>Attendance</a></li>
+      <li><a href="studentev.html"><i class="fas fa-calendar-alt"></i>Announcements & Events</a></li>
+      <li><a href="studentass.html"><i class="fas fa-pencil-alt"></i>Assignments</a></li>
+      <li><a href="profile.html"><i class="fas fa-cog"></i>Settings</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <div class="widget">
+      <h3><i class="fas fa-user-graduate"></i>Attendance Summary</h3>
+      <p>Present: 24/30</p>
+    </div>
+
+    <div class="widget">
+      <h3><i class="fas fa-chart-line"></i>Class Performance</h3>
+      <p>Average Grade: 85%</p>
+    </div>
+
+    <div class="widget">
+      <h3><i class="fas fa-book-open"></i>Recent Grades</h3>
+      <p>Assignment 1: A</p>
+      <p>Assignment 2: B+</p>
+    </div>
+
+    <div class="widget">
+      <h3><i class="fas fa-tasks"></i>Upcoming Tasks</h3>
+      <ul>
+        <li>Assignment 3 (Due: Tomorrow)</li>
+        <li>Quiz 2 (Due: Next Week)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2024 Classroom Tool. All rights reserved.</p>
+  </div>
+
+  <script>
+
+  </script>
+</body>
+</html>
