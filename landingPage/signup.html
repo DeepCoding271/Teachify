@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up - Techify</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Techify</h1>
+            <p>Please sign in to continue or create an account.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="auth-container">
+            <div class="form-container1">
+                <h2>Sign Up</h2>
+                <form id="signup-form">
+                    <label for="name">Username:</label>
+                    <input type="name" id="Username" required>
+                    <label for="name">Your role:</label>
+                    <select id="role" name="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                    </select>
+                    <label for="new-email">Email:</label>
+                    <input type="email" id="new-email" required>
+                    <label for="new-password">Password:</label>
+                    <input type="password" id="new-password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div class="pass">
+                    <p>Already have an account? <a href="signin.html" id="existing-user">Sign In</a></p> 
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Techify. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
